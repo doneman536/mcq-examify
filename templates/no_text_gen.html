@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Text Gen</title>
+    {% load static %}
+    
+    
+</head>
+<body>
+    <h1>No Text Generator</h1>
+    <form method="post" id="no_text_form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit"> Submit</button>
+    </form>
+
+    <h2>{{ mcqs }}</h2>
+  
+    
+</body>
+</html>

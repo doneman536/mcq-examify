@@ -1,3 +1,11 @@
 examify_env/
 __pycache__/
 db.sqlite3
+.env
+all_projects/settings.py
+all_projects/urls.py
+examify_app/forms.py
+examify_app/models.py
+examify_app/urls.py
+examify_app/migrations/0001_initial.py
+

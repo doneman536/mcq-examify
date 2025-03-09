@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Ai MCQs</title>
+    <link rel="stylesheet" href="{% static 'mcq_gen_web.css' %}">
+</head>
+<body>
+
+    <div class="web-heading">
+        <h1>Examify with AI </h1>
+    </div>
+
+    <div class="user-input-box">
+        <form method="post" class = "input-elements">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="generate-button">💡 Quiz Me! MCQs</button>
+        </form>
+    </div>
+
+
+    {% if mcqs %}
+    <div class="generated-mcqs">
+        <h2>Generated MCQs</h2>
+        <ol>
+            {% for key, mcq in mcqs.items %}
+                <li>
+                    <p><strong>{{ mcq.Question }}</strong></p> 
+                    <ul>
+                        {% for opt_key, opt_value in mcq.options.items %}
+                            <li><strong>{{ opt_key|upper }})</strong> {{ opt_value }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+    {% endif %}
+    
+    
+
+</body>
+</html>

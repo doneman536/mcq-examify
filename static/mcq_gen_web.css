@@ -1,0 +1,156 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaf6ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;  /* Allows scrolling */
+    overflow-y: auto;  /* Enables page scrolling */
+}
+
+/* Smaller Fixed Header */
+.web-heading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0073e6;
+    color: white;
+    text-align: center;
+    padding: 1px 0;  /* Reduced padding */
+    font-size: 22px;   /* Smaller font size */
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Input Container - Scrollable */
+.input-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow-y: auto;  /* Allows scrolling when MCQs are generated */
+    margin-top: 60px;  /* Adjusted for smaller header */
+}
+
+/* Form Container */
+.user-input-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin-top: 10rem;
+    min-width: 350px;
+}
+
+/* Form Styling */
+.input-elements {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input Fields */
+.input-elements input,
+.input-elements select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Submit Button */
+.generate-button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.generate-button:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+/* Generated MCQs Section */
+.generated-mcqs {
+    width: 60%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 70vh; /* Allows internal scrolling */
+    overflow-y: auto;
+}
+
+/* MCQs Title */
+.generated-mcqs h2 {
+    color: #0073e6;
+    text-align: center;
+}
+
+/* MCQ List */
+.generated-mcqs ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* MCQ Question */
+.generated-mcqs li {
+    background: #f0f8ff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Options List */
+.generated-mcqs ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+/* Each Option */
+.generated-mcqs ul li {
+    font-size: 16px;
+    background: #ffffff;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #0073e6;
+    transition: background 0.3s;
+}
+
+/* Hover Effect for Options */
+.generated-mcqs ul li:hover {
+    background: #0073e6;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .user-input-box {
+        width: 80%;
+    }
+    
+    .generated-mcqs {
+        width: 90%;
+    }
+}
