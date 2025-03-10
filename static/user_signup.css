@@ -1,0 +1,132 @@
+/* General Page Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Signup Form Container */
+.signup-container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 370px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f9f9f9;
+    transition: border 0.3s, background 0.3s;
+}
+
+/* Input Fields - Adjusted Width */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 24px);  /* Adjusting width to fit inside container */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f9f9f9;
+    transition: border 0.3s, background 0.3s;
+}
+
+
+/* Password Input with Toggle */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #777;
+    transition: color 0.3s;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+.username-already-exists {
+    color: red;  /* Change text color */
+    font-weight: bold;  /* Make text bold */
+    font-size: 14px;  /* Adjust font size */
+    margin-top: 5px;  /* Add some spacing */
+}
+
+
+/* Submit Button */
+button {
+    background: linear-gradient(90deg, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(110, 142, 251, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #a777e3, #6e8efb);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(110, 142, 251, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .signup-container {
+        width: 90%;
+    }
+}

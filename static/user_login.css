@@ -1,0 +1,190 @@
+/* General Page Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Container */
+body > div {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 380px;
+    animation: floatUp 0.8s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Floating Animation */
+@keyframes floatUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Elements */
+.user-login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+    width: 85%;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    color: #444;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+    outline: none;
+    color: #333;
+}
+
+/* Input Field Hover Effect */
+input[type="text"]:hover,
+input[type="password"]:hover {
+    border-color: #6e8efb;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(110, 142, 251, 0.2);
+}
+
+/* Input Field Focus Effect */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #6e8efb;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(110, 142, 251, 0.3);
+    animation: inputFocus 0.5s ease-in-out;
+}
+
+@keyframes inputFocus {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Password Input with Toggle */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-container input {
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+/* Login Button */
+.user-login-button {
+    background: linear-gradient(90deg, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(110, 142, 251, 0.3);
+    width: 100%;
+    margin-top: 20px;
+}
+
+.user-login-button:hover {
+    background: linear-gradient(90deg, #a777e3, #6e8efb);
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(110, 142, 251, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 450px) {
+    body > div {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .user-login-button {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .login-form-group {
+        width: 100%;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+    }
+}
+
+/* Error Message Box */
+.username-msg-box, .password-msg-box {
+    background: rgba(255, 0, 0, 0.1); /* Light red background */
+    color: #d32f2f; /* Dark red text */
+    border: 1px solid #d32f2f; /* Red border */
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for error messages */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Error message position adjustment */
+.username-input .username-msg-box,
+.username-input .password-msg-box {
+    width: 100%;
+}

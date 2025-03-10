@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🙈User Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'user_login.css' %}?v=3">
+</head>
+<body>
+    <div>
+        <form method="post" class="user-login-form">
+            {% csrf_token %}
+            
+            <div class="login-forn-group">
+                <div class="username-input">
+                    {% if username_error %}
+                    <h3 class="username-msg-box">{{username_error}}</h3>
+                    {% endif %}
+                    {{ form.username.label_tag}}
+                    {{ form.username }}
+                </div>
+                
+            </div>
+
+            <div class="login-form-group">
+                <div class="username-input">
+                    {% if password_error %}
+                    <h3 class="password-msg-box">{{password_error}}</h3>
+                    {% endif %}
+                    {{form.password.label_tag}}
+                <div class="password-container">
+                    {{ form.password }}
+                    <span class="toggle-password" onclick="togglePassword()">👁</span>
+                </div>
+
+                </div>
+                
+            <button class="user-login-button">Login</button>
+        </form> 
+    </div>
+
+    <script>
+        function togglePassword() {
+            let passwordField = document.querySelector("input[name=password]");
+            let toggleIcon = document.querySelector('.toggle-password');
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.textContent = "🙈";
+            } else {
+                passwordField.type = "password";
+                toggleIcon.textContent = "👁";
+            }
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

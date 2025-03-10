@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examify Start Up</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examify Start Up</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}?v=3">
 </head>
 <body>
+  <header class="startup-heading">
+    <h1>EXAMIFY Let's Start</h1>
+  </header>
 
-
-    <div class ="startup-heading">
-        <h1>
-            EXAMIFY <i>Let's Start</i> 
-        </h1>
+  <main class="startup-content">
+    <h2>Welcome to Examify</h2>
+    <div class="user-btns">
+      <div class="user-btn">
+        <h4>Sign Up</h4>
+        <button class="action-button" onclick="window.location.href='{% url 'user_signup' %}'">
+          Sign Up
+        </button>
+      </div>
+      <div class="user-btn">
+        <h4>Login</h4>
+        <button class="action-button" onclick="window.location.href='{% url 'user_login' %}'">
+          Login
+        </button>
+      </div>
     </div>
-
-
-    <div class="startup-content">
-        <h2>Welcome To Examify</h2>
-    
-        <div class="user-btns">
-            <div class="new-user-btn">
-                <h4>Sign Up</h4>
-                <button class="new-user-button">Sign Up</button>
-            </div>
-    
-            <div class="old-user-btn">
-                <h4>Login</h4>
-                <button class="old-user-button">Login</button>
-            </div>
-        </div>
-    </div>
-
-    
-
+  </main>
 </body>
 </html>

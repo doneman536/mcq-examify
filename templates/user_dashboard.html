@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'user_dashboard.css' %}?v=3">
+</head>
+<body>
+    <div class="user-dashbord-top">Welcome, {{ username }}</div>
+
+
+    <div class="dashboard">
+        <button class="take-test" onclick="window.location.href='{% url 'mcq_gen_ai' username=username %}'">Take Test Now</button>
+        <button class="learn">Learn Now</button>
+        <button class="history">History of Tests</button>
+    </div>
+</body>
+</html>

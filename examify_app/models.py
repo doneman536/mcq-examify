@@ -14,6 +14,20 @@ class Topic_Selector(models.Model):
 
     def __str__(self):
         return self.topic
+    
+
+
+class UserSignup(models.Model) :
+    username = models.CharField(max_length=30,unique=True)
+    email = models.EmailField(max_length=30)
+    password = models.CharField(max_length=30)
+    history = models.FileField(upload_to='history/',blank=True, null=True)
+
+
+    def __str__(self):
+        return self.username
+
+
 
 
 # Create your models here.
